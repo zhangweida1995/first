@@ -1,0 +1,24 @@
+为了支持导入.css，.scss，.less或.styl文件，你可以使用这些模块，配置服务器渲染应用合理的默认值。
+@zeit/next-css
+@zeit/next-sass
+@zeit/next-less
+@zeit/next-stylus
+
+
+// install 
+npm install --save @zeit/next-css
+
+// next.config.js
+const withCSS = require('@zeit/next-css')
+module.exports = withCSS({
+  cssModules: true
+})
+
+//style.css
+.example {
+  font-size: 50px;
+}
+
+//XX.js
+import css from "../style.css"
+export default () => <div className={css.example}>Hello World!</div>
